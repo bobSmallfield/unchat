@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+.chatSpace {
+  background-color: #2c2c2c;
+  box-shadow: 0 0 500px 0px rgba(0, 170, 0, 0.305);
+  background-image: url("../public/chatBackground.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: lighten;
+}
+
+.topBar {
+  background-color: #2c2c2c;
+}
+
+.roomName {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.topBar button {
+  color: white;
+  background-color: transparent;
+}
+
+.messages {
+  width: 100%;
+  height: 100%;
+  padding: 10px 30px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.messages::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+  border-radius: 100px;
+  transition: width .5s ease-in-out;
+}
+
+.messages::-webkit-scrollbar:hover {
+  background-color: rgb(67, 67, 67);
+  width: 6px;
+}
+
+
+.messages::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.361);
+  border-radius: 100px;
+}
+
+.message {
+  background-color: #363636;
+  box-shadow: 0 0 5px 0px #303030;
+}
+
+.message:not(.own-message) {
+  align-self: flex-start;
+}
+
+.own-message {
+  background-color: #005C4B;
+  color: white;
+}
+
+.username {
+  font-size: 0.7rem;
+  color: rgb(213, 145, 145);
+}
+
+.inputContainer {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  border-radius: 0;
+  flex-direction: row;
+  border-top: solid 1px rgb(57, 57, 57);
+  overflow: hidden;
+  margin-top: auto;
+}
+
+.sendInput {
+  width: calc(100% - 40px);
+  padding: 15px;
+  font-size: 1rem;
+  background-color: #2c2c2c;
+  color: white;
+}
+
+.sendInput:focus, .sendInput:hover, .sendInput, button {
+  border: none;
+  outline: none;
+}
+
+.sendButton {
+  width: 40px;
+  background-color: #2c2c2c;
+}
+
+button {
+  cursor: pointer;
+  color: white;
+}
+
+button:disabled {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: not-allowed;
+}
+

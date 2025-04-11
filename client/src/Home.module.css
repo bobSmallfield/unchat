@@ -1,0 +1,330 @@
+/* Home.module.css */
+
+:root {
+  --marron-oscuro: #1f180c;
+  --casi-negro: #0f0f0e;
+  --marron-claro: #8b8579;
+  --azul-oscuro: #29333f;
+  --azul-claro: #87b0e1;
+  --azul-grisaceo: #8993a1;
+  --amarillo-claro: #e0c187;
+}
+
+.home {
+  background: linear-gradient(var(--casi-negro), var(--azul-oscuro));
+  color: var(--casi-negro);
+  display: flex;
+  flex-direction: column;
+  max-width: 3000px;
+}
+
+/* Sección Hero */
+.hero {
+  height: 90vh;
+  max-height: 1400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  /* background: linear-gradient(var(--casi-negro), var(--azul-oscuro)); */
+}
+
+.heroLogo {
+  width: 200px;
+  margin-bottom: 50px;
+}
+
+.heroLogo img {
+  width: 100%;
+  transition: ease all .3s;
+}
+
+.heroLogo img:hover {
+  rotate: -3deg;
+  cursor: pointer;
+}
+
+.heroContent {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  padding: 0 1rem;
+  padding: 40px;
+}
+
+.heroImg {
+  height: 100%;
+  width: 100%;
+  background: url("../public/chatImgHome.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Input y botón para entrar a la room */
+.joinRoom {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  overflow: hidden;
+  border-radius: 100px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.joinRoom input {
+  border: none;
+  outline: none;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  width: 80%;
+  background-color: var(--casi-negro);
+  color: white;
+}
+
+.joinRoom button {
+  width: 20%;
+  padding: 0.75rem 0;
+  font-weight: 600;
+  font-size: 1.3rem;
+  background-color: var(--amarillo-claro);
+  color: var(--casi-negro);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.joinRoom button:hover {
+  background-color: #e8d5b1;
+  width: 25%;
+}
+
+/* Sección de Características */
+.features {
+  margin-top: 50px;
+  padding: 2rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature {
+  align-self: center;
+  justify-self: center;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  border-radius: 20px;
+  padding: 20px 20px;
+  color: white;
+  background-color: var(--casi-negro);
+  box-shadow: inset black 5px 5px 20px 0px;
+  transition: all ease 0.3s;
+}
+
+.feature:hover {
+  box-shadow: inset var(--casi-negro) 8px 8px 30px 0px;
+}
+
+.feature h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--amarillo-claro);
+}
+
+.feature p {
+  font-size: 1rem;
+  text-align: left;
+}
+
+.feature img {
+  max-width: 25%;
+}
+
+/* STEPS ------------------------------------ */
+
+.steps {
+  margin-top: 20px;
+  align-self: center;
+  justify-self: center;
+  width: 80%;
+  padding: 20px;
+  height: 300px;
+  background: url("../public/path.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  gap: 3.5vw;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  color: white;
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+  border: solid var(--amarillo-claro) 7px;
+  border-radius: 100px;
+}
+
+.step img {
+  width: 80px;
+  position: relative;
+  left: -60px;
+  top: -40px;
+}
+
+/* MARGENES DE CADA UNO DE LOS .STEP ESPECIFICO EN EL APP.CSS */
+
+/* Sección CTA */
+.cta {
+  color: white;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Footer */
+.footer {
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+.footer a {
+  color: white;
+  text-decoration: line;
+  text-decoration-style: solid;
+}
+
+@media only screen and (max-width: 1100px) {
+  .heroImg {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    background: linear-gradient(var(--casi-negro), #171e29, #0f0f0e00), url("../public/chatImgHomeV2blurred.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: screen;
+    text-shadow: 0px 0px 5px 0 var(--casi-negro);
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .joinRoom {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0;
+    align-items: center;
+    gap: 20px;
+    overflow: visible;
+  }
+
+  .joinRoom button {
+    width: auto;
+    border-radius: 100px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+  }
+
+  .joinRoom input {
+    width: 100%;
+    font-size: 1.4rem;
+    padding: 15px;
+    border-radius: 100px;
+    box-shadow: 0 0 15px 0 var(--azul-claro);
+  }
+}
+
+@media (min-width: 1400px) {
+  .steps {
+    align-self: center;
+    justify-self: center;
+    width: 80%;
+    padding: 20px;
+    height: 500px;
+    background: url("../public/path.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    gap: 3.5vw;
+  }
+
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    color: white;
+    width: 300px;
+    height: 300px;
+    padding: 50px;
+    border: solid var(--amarillo-claro) 7px;
+    border-radius: 150px;
+    font-size: 1.4rem;
+  }
+
+  .step img {
+    width: 110px;
+    left: -90px;
+    top: -80px;
+  }
+}
+
+@media (max-width: 980px) {
+  .steps {
+    width: 100%;
+    max-width: 400px;
+    flex-direction: column;
+    height: auto;
+    padding: 40px;
+    gap: 70px;
+    background: url("../public/path_vertical.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+}
