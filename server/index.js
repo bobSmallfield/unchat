@@ -44,7 +44,7 @@ const userSockets = {}; // Objeto para mapear socket.id a username
 
 const roomToInactive = async (roomName) => {
     try {
-        const response = await axios.patch(`http://192.168.0.17:3001/rooms/${roomName}`, { "propiedad(meObliga)": "valor,inutil" });
+        const response = await axios.patch(`http://82.165.173.226:3001/rooms/${roomName}`, { "propiedad(meObliga)": "valor,inutil" });
         console.log('Sala desactivada:', response.data.message);
     } catch (error) {
         console.error('Error al desactivar la room:', error);
@@ -78,7 +78,7 @@ io.on("connection", (socket) => {
         io.to(roomName).emit("new_user", { username, color: userSockets[socket.id] && userSockets[socket.id].color });
         io.to(roomName).emit("update_users", activeRooms[roomName].users);
 
-        await axios.post("http://192.168.0.17:3001/messages", {
+        await axios.post("http://82.165.173.226:3001/messages", {
             "message": `${username} ha entrado en la sala`,
             "username": "server314159265",
             "roomName": roomName
@@ -105,7 +105,7 @@ io.on("connection", (socket) => {
             io.to(roomName).emit("update_users", activeRooms[roomName]?.users || []);
             io.to(roomName).emit("left_user", { username });
 
-            axios.post("http://192.168.0.17:3001/messages", {
+            axios.post("http://82.165.173.226:3001/messages", {
                 "message": `${username} ha salido de la sala`,
                 "username": "server314159265",
                 "roomName": roomName
@@ -138,7 +138,7 @@ io.on("connection", (socket) => {
                 io.to(roomName).emit("update_users", activeRooms[roomName]?.users || []);
                 io.to(roomName).emit("left_user", { username });
 
-                axios.post("http://192.168.0.17:3001/messages", {
+                axios.post("http://82.165.173.226:3001/messages", {
                     "message": `${username} ha salido de la sala`,
                     "username": "server314159265",
                     "roomName": roomName

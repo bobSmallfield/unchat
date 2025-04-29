@@ -7,7 +7,7 @@ const axios = require("axios");
 router.get("/:roomName", async (req, res) => {
     try {
         const roomName = req.params.roomName;
-        const response = await axios.get(`http://192.168.0.17:3001/rooms/${roomName}`);
+        const response = await axios.get(`http://82.165.173.226:3001/rooms/${roomName}`);
 
         if (response.data.error) {
             return res.json({ error: response.data.error });

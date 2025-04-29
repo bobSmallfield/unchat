@@ -32,7 +32,7 @@ router.post("/", async (req, res) => {
 
 router.patch("/:roomName", async (req, res) => {
     const roomName = req.params.roomName;
-    const roomIdObject = await axios.get(`http://192.168.0.17:3001/rooms/${roomName}`);
+    const roomIdObject = await axios.get(`http://82.165.173.226:3001/rooms/${roomName}`);
     if (roomIdObject.data.error) {
         return res.json({ error: roomIdObject.data.error });
     }

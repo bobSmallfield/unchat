@@ -10,7 +10,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import LogoutIcon from '@mui/icons-material/Logout';
 import SaveIcon from '@mui/icons-material/Save';
 
-const socket = io.connect("http://192.168.0.17:3001")
+const socket = io.connect("http://82.165.173.226:3001")
 
 function Room() {
   const navigate = useNavigate()
@@ -75,7 +75,7 @@ function Room() {
   useEffect(() => {
     setCorrectName2(checkRoomName(roomName))
 
-    axios.get(`http://192.168.0.17:3001/messages/${roomName}`).then((response) => {
+    axios.get(`http://82.165.173.226:3001/messages/${roomName}`).then((response) => {
       if (!response.data.error) {
         setMessageList(response.data.messageList)
         setRoomsExists(true)
@@ -144,7 +144,7 @@ function Room() {
       // alert("El mensaje no puede estar vacío") 
       return
     }
-    axios.post("http://192.168.0.17:3001/messages", { "message": message, "username": localItem, "roomName": roomName }).then((response) => {
+    axios.post("http://82.165.173.226:3001/messages", { "message": message, "username": localItem, "roomName": roomName }).then((response) => {
       if (!response.data.error) {
         const returnedMessage = response.data;
         setMessageList((prevMessages) => [...prevMessages, returnedMessage])
@@ -168,7 +168,7 @@ function Room() {
   }
 
   const createRoom = () => {
-    axios.post("http://192.168.0.17:3001/rooms", { "roomName": roomName }).then((response) => {
+    axios.post("http://82.165.173.226:3001/rooms", { "roomName": roomName }).then((response) => {
       if (!response.data.error) {
         setRoomsExists(true)
       } else {
