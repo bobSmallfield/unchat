@@ -6,7 +6,9 @@ const { Server } = require("socket.io")
 
 const db = require("./models")
 const app = express()
-app.use(cors())
+app.use(cors({
+    origin: '*', // o puedes poner el dominio de tu frontend
+}));
 app.use(express.json());
 
 const colors = [
@@ -157,7 +159,7 @@ io.on("connection", (socket) => {
 // Start server
 
 db.sequelize.sync().then(() => {
-    server.listen(3001, () => {
-        console.log("Listening on port 3001!")
+    server.listen(3001, '0.0.0.0', () => {
+        console.log("Listening on port 3001! (mensaje mio)")
     })
 })
